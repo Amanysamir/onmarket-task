@@ -1,0 +1,12 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}

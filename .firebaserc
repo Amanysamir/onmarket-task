@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "onmarkettask": {
+      "hosting": {
+        "on-market": [
+          "onmarkettask"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "onmarkettask"
+  }
+}

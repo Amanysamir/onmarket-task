@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Add user</h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="outline">
+            <mat-label>user name</mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>user email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label> user password</mat-label>
+            <input formControlName="password" matInput type="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label> user role</mat-label>
+            <mat-select formControlName="role">
+                <mat-option value="frontend">frontend developer</mat-option>
+                <mat-option value="backend">backend developer</mat-option>
+                <mat-option value="tester">tester</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>action</mat-label>
+            <textarea formControlName="action" matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button mat-raised-button color="primary" [disabled]="userForm.invalid" (click)="adduser()">{{actionbtn}}</button>
+</div>
