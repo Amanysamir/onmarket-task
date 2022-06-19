@@ -21,7 +21,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this._UsersServiceService.getusers().subscribe((users) => {
-      console.log(users);
       this.users = users;
       this.dataSource =new MatTableDataSource(users);
         this.dataSource.paginator = this.paginator;
@@ -32,16 +31,12 @@ export class UsersComponent implements OnInit {
   editproduct(user :any){
      this.dialog.open(DialogComponent , {data:user});
      this._UsersServiceService.edituser(user);
-    console.log("from users com" + user)
+
   }
   deleteproduct(user:any){
     this._UsersServiceService.deleteuser (user);
-    console.log(user + "from delete")
   }
-  /* editproduct(user :any){
-    this.dialog.open(DialogComponent , {data:user});
-    console.log(user)
-  } */
+
   openDialog() {
     this.dialog.open(DialogComponent)
   }

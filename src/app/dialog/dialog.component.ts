@@ -61,10 +61,9 @@ export class DialogComponent implements OnInit {
   }
 
   edituser() {
-    debugger;
     this._UsersServiceService.edituser(this.userForm.value);
     this.userForm.reset();
     this._MatDialogRef.close();
-    console.log('form dialog' + this.userForm.value);
+
   }
 }
