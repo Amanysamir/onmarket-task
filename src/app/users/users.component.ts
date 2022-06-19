@@ -33,11 +33,10 @@ export class UsersComponent implements OnInit {
      this.dialog.open(DialogComponent , {data:user});
      this._UsersServiceService.edituser(user);
     console.log("from users com" + user)
-    console.log (user +"form")
   }
   deleteproduct(user:any){
     this._UsersServiceService.deleteuser (user);
-    console.log(user)
+    console.log(user + "from delete")
   }
   /* editproduct(user :any){
     this.dialog.open(DialogComponent , {data:user});

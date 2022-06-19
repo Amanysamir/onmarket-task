@@ -12,8 +12,6 @@ export class UsersServiceService {
   usersdata: Observable <any>
   itemdoc !: AngularFirestoreDocument <user>
   constructor(public afs:AngularFirestore) {
-    /* this.usersdata = this.afs.collection('users').valueChanges(); */
-
     this.itemsCollection =this.afs.collection('users');
     this.usersdata = this.itemsCollection.snapshotChanges().pipe(
       map(changes => {
@@ -24,21 +22,19 @@ export class UsersServiceService {
         })
       })
     )
-
-    console.log(this.usersdata);
-
-
    }
+
+
    getusers(){
-     return this.usersdata  ;
+     return this.usersdata ;
    }
    adduser (user :user){
-     this.itemsCollection.add (user)
+     this.itemsCollection.add(user)
    }
    edituser(user:any ){
+    //debugger
     this.itemdoc = this.afs.doc(`users/${user.id}`);
     this.itemdoc.update(user);
-    console.log(user +'from service')
    }
    deleteuser(user:any){
         this.itemdoc = this.afs.doc(`users/${user.id}`);
